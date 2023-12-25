@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: my-deployment
+
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: my-app-name
+
+  template:
+    metadata:
+      labels:
+        app: my-app-name # Ensure this label matches the selector
+    spec:
+      containers:
+        - name: my-nginx-app
+          image: mhmod978/project
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 80
