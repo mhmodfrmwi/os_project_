@@ -11,7 +11,7 @@ jobs:
       - uses: actions/checkout@v3
 
       - name: "login to docker hub"
-        run: docker login --username ${{ secrets.DOCKER_USER_NAME }} --password ${{ secrets.DOCKER_TOKEN }}
+        run: docker login --username ${{ secrets.DOCKER_USER_NAME }} --password ${{ secrets.DOCKER__TOKEN }}
 
       - name: "building docker image"
         run: docker build -t ${{ secrets.DOCKER_USER_NAME }}/os_project_ .
